@@ -1,0 +1,62 @@
+.background-sign-up {
+  background-image: url("../../images/bg/grey5.png");
+  width: auto;
+  height: 913px;
+  background-size: 120%;
+  padding-top: 10px;
+}
+.border {
+  padding-top: 25px;
+  width: auto;
+  height: 760px;
+  background-color: white;
+}
+
+.logo {
+  cursor: pointer;
+  background-image: url("../../images/logo/logo-two.png");
+  width: 50px;
+  height: 47px;
+  background-size: 105%;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+h3 {
+  width: 260px;
+  text-align: center;
+}
+h5 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+label {
+  margin-top: 20px;
+}
+button {
+  margin-top: 25px;
+}
+.accept {
+  margin-top: 45px;
+}
+p {
+  text-align: center;
+  font-size: 14px;
+}
+a {
+  margin-top: 5px;
+  font-size: 14px;
+}
+.account-sign-up {
+  margin-top: 12px;
+}
+
+.information {
+  font-size: 12px;
+}
+footer {
+  margin-top: 45px;
+}
+.help-block {
+  color: red;
+}

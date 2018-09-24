@@ -1,0 +1,39 @@
+.background-footer {
+  background-color: #231f20;
+  height: 250px;
+}
+
+ul> li {
+  list-style-type: none;
+  color: #828386;
+
+}
+ul>li>a {
+  cursor: pointer;
+}
+li:first-child {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+ul>li>a:hover {
+  opacity: 0.5;
+}
+
+.footer {
+  padding-top: 20px;
+  border-top: 1px solid;
+  text-align: center;
+  color: #828386;
+}
+@media (max-width: 580px) {
+  .footer-content {
+    display: none;
+  }
+  .background-footer {
+    height: 150px;
+  }
+  .footer {
+    margin-top: 80px;
+  }
+
+}

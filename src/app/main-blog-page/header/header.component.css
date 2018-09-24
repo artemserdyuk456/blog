@@ -1,0 +1,88 @@
+.navbar {
+  margin-top: 35px;
+}
+.dropdown {
+  display: none;
+}
+.logo {
+  background-image: url("../../../images/logo/logo-two.png");
+  width: 35px;
+  height: 32px;
+  background-size: 105%;
+  cursor: pointer;
+  margin-right: 140px
+}
+.logo-text {
+  width: 204px;
+  text-align: center;
+}
+
+.btn-primary {
+  margin-left: 10px;
+  width: 150px;
+  background: #52bad5;
+  border-color: #52bad5;
+}
+a {
+  cursor: pointer;
+}
+.nav-link {
+  line-height: 1;
+  color: #231f20;
+  border-bottom: 2px solid transparent;
+}
+h4 {
+  color: #231f20;
+}
+.nav li a:hover {
+  border-bottom: 2px solid #231f20;
+  /*color: #52bad5;*/
+}
+.auth {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+}
+.auth:hover {
+  border-bottom: 3px solid #231f20;
+}
+.user {
+  font-size: 12px;
+  position: relative;
+  top: -20px;
+  left: 100px;
+}
+@media (max-width: 767px) {
+  .user {
+    position: absolute;
+    left: 300px;
+  }
+  /*.dropdown{*/
+    /*display: block;*/
+  /*}*/
+  /*.nav {*/
+    /*display: none;*/
+  /*}*/
+}
+@media (max-width: 538px) {
+  .user {
+    position: absolute;
+    left: 100px;
+  }
+}
+@media (max-width: 580px) {
+  .auth {
+    font-size: 15px;
+    position: absolute;
+    top: -22px;
+    left: 260px;
+  }
+  .user {
+    position: absolute;
+    left: 50px;
+  }
+}
+

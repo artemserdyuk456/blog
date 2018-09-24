@@ -1,0 +1,56 @@
+<div class="background">
+  <mat-card>
+    <form [formGroup]="postForm" (submit)="onAddPost()">
+      <mat-form-field class="title-create">
+        <input
+          matInput
+          type="text"
+          formControlName="title"
+          minlength="3"
+          placeholder="Post Title">
+        <mat-error *ngIf="!postForm.get('title').valid && postForm.get('title').touched">Please enter a post title.</mat-error>
+      </mat-form-field>
+      <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && postForm.get('image').valid">
+        <img [src]="imagePreview" [alt]="postForm.value.title">
+      </div>
+      <div> {{ progressBarValue }}</div>
+
+      <div *ngIf="upload">
+        <h6>Progress upload</h6>
+        <div class="progress">
+          <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': upload.progress + '%' }"></div>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-outline-dark" type="button" (click)="filePicker.click()">Pick Image</button>
+        <input type="file" #filePicker (change)="onImagePicked($event)">
+      </div>
+
+      <mat-form-field class="color content-create">
+      <textarea
+        matInput
+        rows="4"
+        formControlName="content"
+        placeholder="Post Content"></textarea>
+        <mat-error *ngIf="!postForm.get('content').valid && postForm.get('content').touched">Please enter a post title.</mat-error>
+      </mat-form-field>
+      <button
+        class="btn btn-primary"
+        type="submit">Add Post</button>
+    </form>
+  </mat-card>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <footer>
+          <hr>
+          <p>©2018 SimpleBlog, Inc. All Rights Reserved.</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

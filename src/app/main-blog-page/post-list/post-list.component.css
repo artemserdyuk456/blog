@@ -1,0 +1,75 @@
+.creator {
+  font-size: 14px;
+}
+
+mat-form-field {
+  display: block;
+}
+.user-commentator, .creator {
+  font-weight: 500;
+}
+mat-expansion-panel {
+  margin-bottom: 20px;
+}
+
+mat-card {
+  color: #231f20;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.background {
+  background-color: #e3dfdb;
+  height: auto;
+  padding-top: 120px;
+}
+footer {
+  margin-top: 593px;
+  margin-bottom: 101px;
+  text-align: center;
+}
+.user-creator-posts {
+  padding-top: 15px;
+}
+.post-title {
+  padding-top: 10px;
+}
+.title {
+  margin-left: -14px;
+  display: inline-block;
+  border-bottom: 2px solid;
+}
+ngb-rating {
+  display: block;
+  font-size: 18px;
+}
+.btn-outline-dark {
+  font-size: 14px;
+}
+.user-comments {
+  margin-bottom: 15px;
+}
+.text-com {
+  position: relative;
+  bottom: 15px;
+}
+.main-rating {
+  margin-left: 15px;
+  font-size: 20px;
+}
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.btn-delete-comment {
+  text-align: right;
+}
+.delete-comments {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 25px;
+}

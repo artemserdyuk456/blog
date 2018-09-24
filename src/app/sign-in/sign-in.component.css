@@ -1,0 +1,61 @@
+.background-sign-in {
+  background-image: url("../../images/bg/grey2.png");
+  width: auto;
+  height: 913px;
+  background-size: 120%;
+  padding-top: 10px;
+}
+.border {
+  height: 440px;
+  margin-top: 95px;
+  background-color: white;
+}
+h1 {
+  width: 315px;
+  text-align: center;
+  margin-top: 35px;
+}
+.account {
+  margin-left: 25px;
+}
+.nav-link {
+  right: 12px;
+  bottom: 8px;
+  position: relative;
+}
+label, button {
+  margin-top: 15px;
+}
+.logo {
+  cursor: pointer;
+  background-image: url("../../images/logo/logo-two.png");
+  width: 50px;
+  height: 47px;
+  background-size: 105%;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 300px;
+}
+.help-block {
+  color: red;
+}
+@media (max-width: 769px) {
+  .logo {
+    margin-left: 95px;
+  }
+  .background-sign-in {
+    height: 892px;
+    background-size: 172%;
+
+  }
+}
+@media (max-width: 496px) {
+  .logo {
+    margin-left: 35px;
+  }
+}

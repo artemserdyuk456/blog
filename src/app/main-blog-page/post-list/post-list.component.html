@@ -1,0 +1,164 @@
+
+<div class="background">
+  <mat-card>
+    <mat-accordion multi="true" *ngIf="postUser.length > 0">
+      <mat-expansion-panel *ngFor="let post of postUser">
+
+        <!--<mat-expansion-panel-header>-->
+          <!--<div class="container">-->
+            <!--<div class="row">-->
+              <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                <!--<div class="post-title" >-->
+                  <!--<h5 class="title">{{ post.title }}</h5>-->
+                  <!--<ngb-rating-->
+                    <!--class="main-rating"-->
+                    <!--[max]="5"-->
+                    <!--[readonly]="true"-->
+                    <!--[rate]="ratingData">-->
+                  <!--</ngb-rating>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+                <!--<div class="user-creator-posts">-->
+                  <!--<p ><span class="creator">Create by:</span> {{post.email}}</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</mat-expansion-panel-header>-->
+
+        <mat-expansion-panel-header>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="post-title" >
+                  <h5 class="title">{{ post.title }}</h5>
+                  <span *ngIf="showRating(post.id)">
+                     <ngb-rating
+                       class="main-rating"
+                       [max]="5"
+                       [readonly]="true"
+                       [(rate)]="actualRating">
+                    </ngb-rating>
+                  </span>
+
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="user-creator-posts">
+                  <p ><span class="creator">Create by:</span> {{post.email}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel-header>
+
+
+        <div *ngIf="actualRating !== 'NaN'">
+          <h6> Rating - {{ actualRating}}  </h6>
+        </div>
+
+        <div class="post-image">
+          <img [src]="post.image.url">
+        </div>
+        <hr>
+        <p class="post-content">{{ post.content }}</p>
+        <hr>
+        <h6  class="user-comments">Users comments:</h6>
+
+
+        <div  *ngFor="let comment of commentsUsers">
+          <div *ngIf="commentsToPosts(post.id, comment.postId)">
+            <p class="user-commentator">{{comment.comEmail}} :</p>
+            <p class="text-com">{{comment.text}}</p>
+            <ngb-rating [max]="5" [readonly]="true" [rate]="comment.rating"></ngb-rating>
+            <div class="btn-delete-comment" *ngIf="accessToDeletePosts(post.email)">
+              <span class="delete-comments"  (click)="onDeleteComment(post.id, comment.postId, comment.id)"><i class="fas fa-trash-alt"></i></span>
+            </div>
+            <hr>
+          </div>
+        </div>
+
+
+
+        <form [formGroup]="commentForm" (submit)="addComment(post.id)">
+          <mat-form-field class="color">
+            <input
+              matInput
+              minlength="4"
+              formControlName="comment"
+              placeholder="Comments">
+          </mat-form-field>
+
+          <div  class="form-group">
+            <ngb-rating
+              type="number"
+              [max]="5"
+              [formControl]="rating">
+            </ngb-rating>
+            <div class="form-text small">
+              <div *ngIf="rating.valid" class="text-success">Thanks!</div>
+              <div *ngIf="rating.invalid" class="text-danger">Please rate post</div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-outline-dark" (click)="addComment(post.id)">Add Comment</button>
+        </form>
+
+
+
+        <!--<form [formGroup]="commentForm" (submit)="addComment(post.id)">-->
+          <!--<mat-form-field class="color">-->
+          <!--<input-->
+            <!--matInput-->
+            <!--minlength="4"-->
+            <!--formControlName="comment"-->
+            <!--placeholder="Comments">-->
+          <!--</mat-form-field>-->
+
+          <!--<div  class="form-group">-->
+            <!--<ngb-rating-->
+              <!--type="number"-->
+              <!--[max]="5"-->
+              <!--[formControl]="rating">-->
+            <!--</ngb-rating>-->
+            <!--<div class="form-text small">-->
+              <!--<div *ngIf="rating.valid" class="text-success">Thanks!</div>-->
+              <!--<div *ngIf="rating.invalid" class="text-danger">Please rate post</div>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<button-->
+            <!--type="button"-->
+            <!--class="btn btn-outline-dark" (click)="addComment(post.id)">Add Comment</button>-->
+        <!--</form>-->
+
+
+
+
+        <mat-action-row *ngIf="accessToDeletePosts(post.email)">
+          <button mat-button color="warn" (click)="onDeletePost(post.id, post.image.name)">DELETE</button>
+        </mat-action-row>
+
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <p class="info-text mat-body-1" *ngIf="postUser.length <= 0">No posts added yet! Please create post!</p>
+  </mat-card>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <footer>
+          <hr>
+          <p>©2018 SimpleBlog, Inc. All Rights Reserved.</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

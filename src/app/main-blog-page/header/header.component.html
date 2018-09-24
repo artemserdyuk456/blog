@@ -1,0 +1,59 @@
+<div class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <!--<span class="logo"></span><h4>SimpleBlog</h4>-->
+
+
+          <div class="logo" (click)="goToMainPage()">
+            <h4 class="logo-text">SimpleBlog</h4>
+          </div>
+          <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+            <!--<span class="navbar-toggler-icon"></span>-->
+          <!--</button>-->
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">Action</button>
+              <button class="dropdown-item" type="button">Another action</button>
+              <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+          </div>
+
+            <ul class="nav mr-auto" *ngIf="userIsAuthenticated">
+              <li class="nav-item">
+                <a class="nav-link" (click)="goToPostCreatePage()">Create post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="goToPostPage()">Posts</a>
+              </li>
+            </ul>
+          <ul class="nav mr-auto" *ngIf="!userIsAuthenticated">
+
+          </ul>
+          <ng-template [ngIf]="!userIsAuthenticated">
+            <a class="auth" (click)="goToSignInPage()">Log in</a>
+            <a class="auth" (click)="goToSignUpPage()">Sign up</a>
+          </ng-template>
+          <ng-template [ngIf]="userIsAuthenticated">
+            <p class="user">User: {{currentUserEmail}}</p>
+            <a class="auth" (click)="onLogout()">Log Out</a>
+          </ng-template>
+
+
+
+          <!--<button class="btn btn-outline-success" type="button" (click)="goToSignInPage()">Log in</button>-->
+              <!--<button class="btn btn-primary" type="button" (click)="goToSignUpPage()">Sign up</button>-->
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+

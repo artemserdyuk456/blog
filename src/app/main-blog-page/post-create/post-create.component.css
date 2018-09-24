@@ -1,0 +1,49 @@
+mat-card {
+  color: #231f20;
+  width: 80%;
+  margin: 0 auto;
+}
+mat-form-field,
+textarea {
+  width: 100%;
+}
+.color {
+  color: #231f20;
+}
+.background {
+  background-color: #e3dfdb;
+  height: auto;
+  padding-top: 120px;
+}
+footer {
+  margin-top: 330px;
+  text-align: center;
+}
+input[type="file"] {
+  visibility: hidden;
+}
+.post-content {
+  margin-top: 25px;
+}
+.image-preview {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.image-preview img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.btn-outline-dark {
+  margin-top: 50px;
+}
+.title-create {
+  margin-bottom: 25px;
+}
+.progress-bar {
+  background-color: #231f20;
+}
+.content-create {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
