@@ -25,3 +25,35 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+ run npm install
+ 
+ create new firebase project 
+ https://console.firebase.google.com/project/blog-project-719b1/database/firestore/rules
+ 
+ add rules to database realtime
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+
+
+add rules to storage
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write;
+    }
+  }
+}
+
+
+create Authentication method: email&password
+
+add to project in src\environments\environments config ang in  app.component.ts
+https://firebase.google.com/docs/web/setup
+
